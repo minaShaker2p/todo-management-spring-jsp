@@ -3,6 +3,7 @@ package com.mina.todolistjsp.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -17,7 +18,6 @@ import java.util.Date;
 @Table(name = "todos")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Todo {
 
@@ -31,4 +31,13 @@ public class Todo {
     private String description;
 
     private Date targetDate;
+
+    private boolean isDone;
+
+    public Todo(String username, String description, Date targetDate, boolean isDone) {
+        this.username = username;
+        this.description = description;
+        this.targetDate = targetDate;
+        this.isDone = isDone;
+    }
 }
