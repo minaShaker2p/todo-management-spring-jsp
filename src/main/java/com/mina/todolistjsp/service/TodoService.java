@@ -36,10 +36,14 @@ public class TodoService implements ITodoService {
     @Override
     public void deleteTodo(Long id) {
 
+        Optional<Todo> todo = todoRepository.findById(id);
+        todo.ifPresent(value -> todoRepository.delete(value));
+
     }
 
     @Override
     public void saveTodo(Todo todo) {
+        todoRepository.save(todo);
 
     }
 }
