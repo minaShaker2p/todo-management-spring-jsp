@@ -60,7 +60,7 @@ public class TodoController {
             return "todo";
         }
 
-        todo.setUsername(getLoggedInUserName(model));
+        todo.setUserName(getLoggedInUserName(model));
         todoService.updateTodo(todo);
         return "redirect:/list-todos";
     }
@@ -70,7 +70,7 @@ public class TodoController {
         if (result.hasErrors())
             return "todo";
 
-        todo.setUsername(getLoggedInUserName(model));
+        todo.setUserName(getLoggedInUserName(model));
         todoService.saveTodo(todo);
         return "redirect:/list-todos";
     }

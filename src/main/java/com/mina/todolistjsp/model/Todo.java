@@ -1,9 +1,7 @@
 package com.mina.todolistjsp.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -25,7 +23,7 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String username;
+    private String userName;
 
     @Size(min = 10, message = "Enter at least 10 characters")
     private String description;
@@ -34,8 +32,8 @@ public class Todo {
 
     private boolean isDone;
 
-    public Todo(String username, String description, Date targetDate, boolean isDone) {
-        this.username = username;
+    public Todo(String userName, String description, Date targetDate, boolean isDone) {
+        this.userName = userName;
         this.description = description;
         this.targetDate = targetDate;
         this.isDone = isDone;
